@@ -10,6 +10,7 @@ import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
 import { useState, useEffect, useRef } from 'react';
 import { useDebounce } from '~/hooks';
+import { SearchIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -87,8 +88,8 @@ function Search() {
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
+                    <SearchIcon />
                 </button>
             </div>
         </HeadlessTippy>
